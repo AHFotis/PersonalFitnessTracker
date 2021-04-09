@@ -4,9 +4,6 @@ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 8080;
 
-//requiring models for the database. need to update path when made
-const db = require("./models");
-
 const app = express();
 
 //middleware
@@ -18,6 +15,7 @@ app.use(express.static("public"));
 
 //connects to routes
 app.use(require("./routes/pageRoutes.js"));
+app.use(require("./routes/apiRoutes.js"));
 
 //connect to database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { 
