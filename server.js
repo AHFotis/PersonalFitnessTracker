@@ -21,7 +21,8 @@ app.use(require("./routes/apiRoutes.js"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { 
     useUnifiedTopology: true, 
     useNewUrlParser: true, 
-    useCreateIndex: true 
+    useCreateIndex: true,
+    useFindAndModify: true
 })
 
 //start server

@@ -13,8 +13,8 @@ router.get("/api/workouts", (req, res) => {
 });
 
 //create new workout
-router.post("/api/workouts", ({ body }, res) => {
-    Workout.create(body)
+router.post("/api/workouts", (req, res) => {
+    Workout.create({})
     .then(workout => {
       res.json(workout);
     })
@@ -23,10 +23,20 @@ router.post("/api/workouts", ({ body }, res) => {
     });
 });
 
-router.put("/api/workouts/:id", (req, res) => {
-
+//add exercise to workout
+router.put("/api/workouts/:id", ({ body, params }, res) => {
+    Workout.findByIdAndUpdate(params.id,
+        {$push: {exercises: body}},
+        {new: true}
+    ).then(workout => {
+        res.json(workout);
+      })
+      .catch(err => {
+        res.json(err);
+      });
 });
 
+//returns data to states page. need to study aggregates for this.
 router.get("/api/workouts/range", (req, res) => {
 
 });
