@@ -46,6 +46,9 @@ const WorkoutSchema = new Schema({
 });
 
 // https://mongoosejs.com/docs/guide.html#virtuals, https://mongoosejs.com/docs/tutorials/virtuals.html
+//will do $sum or $ add in a similar way to this...
+//look at activity 12 from 06Apr
+//"custom function you might want to have ready"
 WorkoutSchema.virtual("totalDuration").get(function () {
     return this.exercises.reduce((total, exercise) => {
         return total + exercise.duration;

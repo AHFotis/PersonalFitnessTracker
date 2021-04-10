@@ -1,3 +1,5 @@
+//Nate recommends writing these in Postman
+
 const API = {
   async getLastWorkout() {
     let res;
@@ -35,6 +37,7 @@ const API = {
     return json;
   },
 
+  //will use aggregate when called. Nate says $sum
   async getWorkoutsInRange() {
     const res = await fetch(`/api/workouts/range`);
     const json = await res.json();
