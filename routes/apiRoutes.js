@@ -12,8 +12,15 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
-router.post("/api/workouts", (req, res) => {
-
+//create new workout
+router.post("/api/workouts", ({ body }, res) => {
+    Workout.create(body)
+    .then(workout => {
+      res.json(workout);
+    })
+    .catch(err => {
+      res.json(err);
+    });
 });
 
 router.put("/api/workouts/:id", (req, res) => {
