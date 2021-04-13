@@ -38,16 +38,20 @@ router.put("/api/workouts/:id", ({ body, params }, res) => {
 
 //returns data to states page. need to study aggregates for this.
 router.get("/api/workouts/range", (req, res) => {
-Workout.aggregate([
-  {
-      $addFields: {
-          totalWeight: { $sum: "$exercises.weight" },
-          totalDuration: { $sum: "$exercises.duration" }
-      }
-  },
-])
-.sort({ day: - 1 }).limit(7).sort( { day: 1 })
+
+
+// Workout.aggregate([
+//   {
+//       $addFields: {
+//           totalWeight: { $sum: "$exercises.weight" },
+//           totalDuration: { $sum: "$exercises.duration" }
+//       }
+//   },
+// ])
+Workout.find()
+.sort( { day: -1} ).limit(7)
 .then(workout => {
+  console.log(workout)
     res.json(workout);
   })
   .catch(err => {
