@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
     useUnifiedTopology: true, 
     useNewUrlParser: true, 
     useCreateIndex: true,
-    useFindAndModify: true
+    useFindAndModify: false
 })
 
 //start server
