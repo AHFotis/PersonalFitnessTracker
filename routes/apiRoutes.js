@@ -43,7 +43,7 @@ router.get("/api/workouts/range", (req, res) => {
 // Workout.aggregate([
 //   {
 //       $addFields: {
-//           totalWeight: { $sum: "$exercises.weight" },
+//           // totalWeight: { $sum: "$exercises.weight" },
 //           totalDuration: { $sum: "$exercises.duration" }
 //       }
 //   },
@@ -51,7 +51,6 @@ router.get("/api/workouts/range", (req, res) => {
 Workout.find()
 .sort( { day: -1} ).limit(7)
 .then(workout => {
-  console.log(workout)
     res.json(workout);
   })
   .catch(err => {

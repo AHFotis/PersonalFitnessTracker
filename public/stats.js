@@ -26,6 +26,10 @@ function populateChart(data) {
   let pounds = calculateTotalWeight(data);
   let workouts = workoutNames(data);
   const colors = generatePalette();
+  console.log("DATA", data);
+  console.log("WORKOUTS", workouts);
+  console.log("DURATIONS", durations)
+  console.log("POUNDS", pounds)
 
   let line = document.querySelector('#canvas').getContext('2d');
   let bar = document.querySelector('#canvas2').getContext('2d');
