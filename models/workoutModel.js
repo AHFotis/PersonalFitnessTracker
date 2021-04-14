@@ -39,18 +39,20 @@ const WorkoutSchema = new Schema({
             trim: true,
         },
     }]
-}, {
-    toJSON: {
-        virtuals: true
-    }
-});
+}, 
+// {
+//     toJSON: {
+//         virtuals: true
+//     }
+// }
+);
 
 // https://mongoosejs.com/docs/guide.html#virtuals, https://mongoosejs.com/docs/tutorials/virtuals.html
-WorkoutSchema.virtual("totalDuration").get(function () {
-    return this.exercises.reduce((total, exercise) => {
-        return total + exercise.duration;
-    }, 0);
-});
+// WorkoutSchema.virtual("totalDuration").get(function () {
+//     return this.exercises.reduce((total, exercise) => {
+//         return total + exercise.duration;
+//     }, 0);
+// });
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
