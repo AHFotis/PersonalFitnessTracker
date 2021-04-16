@@ -23,8 +23,10 @@ A personal fitness tracker allowing the user to input their daily workout routin
 Click [here](https://personal-fitnesss-tracker.herokuapp.com/?id=6075e370ebdd9600154845ac) to view the live application on Heroku.
 
 Screenshot of homepage
-  ![State Page](Reference/fitness.png)
+  ![Home Page](Reference/tracker.png)
 
+Screenshot of stats page
+  ![Stat Page](Reference/fitness.png)
 
 ## Details
   * Homepage will users most recent workout stats or, if no information is provided, will prompt the user to create a new workout.
